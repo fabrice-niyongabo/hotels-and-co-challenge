@@ -24,8 +24,11 @@ function Header() {
 
             <DropdownMenu.Portal>
               <DropdownMenu.Content
-                className="bg-white full shadow-md rounded-md w-56 mt-3 py-1"
+                className="bg-white full  rounded-md w-56 mt-3 py-1"
                 align="end"
+                style={{
+                  boxShadow: "0 2px 16px rgba(0,0,0,0.12)",
+                }}
               >
                 <DropdownMenu.Item className="px-5 hover:bg-gray-100 hover:cursor-pointer outline-none text-sm py-3 font-semibold">
                   Sign up
