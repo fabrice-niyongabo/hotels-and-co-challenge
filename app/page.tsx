@@ -1,10 +1,9 @@
-import Categories from "./components/categories";
+import HomeContents from "./components/home-contents";
 
 export default function Home() {
   return (
     <div className="container mx-auto">
-      <Categories />
-      <p>hemo</p>
+      <HomeContents />
     </div>
   );
 }
