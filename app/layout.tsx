@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "@radix-ui/themes/styles.css";
 import "./globals.css";
+import "react-multi-carousel/lib/styles.css";
 import Header from "./components/header";
 import { Theme } from "@radix-ui/themes";
 import ReactQueryProvider from "./util/ReactQueryProvider";

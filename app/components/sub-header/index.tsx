@@ -5,7 +5,6 @@ import CategoriesCarousel from "./categories-carousel";
 import { BiFilter } from "react-icons/bi";
 import Loader from "./loader";
 import { useQuery } from "@tanstack/react-query";
-import { AlertDialog } from "@radix-ui/themes";
 
 const fetchCategories = async () => {
   const response = await fetch(
