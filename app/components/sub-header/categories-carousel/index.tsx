@@ -7,14 +7,8 @@ import { MdNavigateNext, MdNavigateBefore } from "react-icons/md";
 
 interface IProps {
   categories: ICategory[];
-  selectedCategory: ICategory | undefined;
-  setSelectedCategory: any;
 }
-function CategoriesCarousel({
-  categories,
-  selectedCategory,
-  setSelectedCategory,
-}: IProps) {
+function CategoriesCarousel({ categories }: IProps) {
   return (
     <Carousel
       itemsToShow={8}
@@ -36,13 +30,7 @@ function CategoriesCarousel({
       )}
     >
       {categories.map((item, index) => (
-        <CategoryItem
-          key={item._id}
-          category={item}
-          categoryIndex={index}
-          selectedCategory={selectedCategory}
-          setSelectedCategory={setSelectedCategory}
-        />
+        <CategoryItem key={item._id} category={item} categoryIndex={index} />
       ))}
     </Carousel>
   );
