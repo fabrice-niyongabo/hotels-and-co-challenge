@@ -16,10 +16,13 @@ function CategoriesCarousel({ categories }: IProps) {
       pagination={false}
       renderArrow={(props) => (
         <div
-          className={`bg-white shadow-md flex items-center justify-center rounded-full h-8 w-8 select-none mt-1 font-semibold hover:shadow-lg hover:cursor-pointer d-blo ${
-            props.isEdge ? "hidden" : "block"
+          // className={`bg-white shadow-md flex items-center justify-center rounded-full h-8 w-8 select-none mt-1 font-semibold hover:shadow-lg hover:cursor-pointer ${
+          className={`bg-white shadow-md flex items-center justify-center rounded-full h-8 w-8 select-none mt-1 font-semibold hover:shadow-lg ${
+            props.isEdge
+              ? "cursor-not-allowed opacity-70"
+              : "cursor-pointer opacity-1"
           }`}
-          onClick={props.onClick}
+          onClick={props.isEdge ? undefined : props.onClick}
         >
           {props.type === "PREV" ? <MdNavigateBefore /> : <MdNavigateNext />}
         </div>
