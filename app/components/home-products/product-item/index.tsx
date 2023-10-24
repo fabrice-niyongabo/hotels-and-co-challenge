@@ -28,7 +28,7 @@ function ProductItem({ product }: IProps) {
     <div className="relative">
       <Carousel responsive={responsive} showDots>
         {product.images.map((item) => (
-          <Link href={"/"}>
+          <Link href={`/rooms/${product._id}`}>
             <img
               src={item.secure_url}
               alt={product.name}
@@ -37,7 +37,7 @@ function ProductItem({ product }: IProps) {
           </Link>
         ))}
       </Carousel>
-      <Link href={"/"}>
+      <Link href={`/rooms/${product._id}`}>
         <div className="flex items-center justify-between mt-2">
           <p className="text-sm font-medium">{product.address}</p>
           <div className="flex items-center justify-center ml-3">
