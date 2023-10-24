@@ -17,7 +17,9 @@ const fetchCategories = async () => {
 };
 
 function HomeContents() {
-  const [selectedCategory, setSelectedCategory] = useState();
+  const [selectedCategory, setSelectedCategory] = useState<
+    ICategory | undefined
+  >(undefined);
 
   //fetching categories
   const categoriesQuery = useQuery({
@@ -34,6 +36,8 @@ function HomeContents() {
         isLoading={categoriesQuery.isLoading}
         isError={categoriesQuery.isError}
         categories={categoriesQuery.data}
+        selectedCategory={selectedCategory}
+        setSelectedCategory={setSelectedCategory}
       />
     </>
   );

@@ -8,14 +8,25 @@ interface IProps {
   categories: ICategory[] | undefined;
   isLoading: boolean;
   isError: boolean;
+  selectedCategory: ICategory | undefined;
+  setSelectedCategory: any;
 }
-function SubHeader({ categories, isLoading }: IProps) {
+function SubHeader({
+  categories,
+  isLoading,
+  selectedCategory,
+  setSelectedCategory,
+}: IProps) {
   return (
     <div className="pt-2">
       {isLoading && <Loader />}
       {categories && (
         <div className="flex justify-between items-center">
-          <CategoriesCarousel categories={categories} />
+          <CategoriesCarousel
+            selectedCategory={selectedCategory}
+            setSelectedCategory={setSelectedCategory}
+            categories={categories}
+          />
           <div className="ml-5 flex items-center justify-between gap-5 border-gray-200 border   py-2 px-5 rounded-lg hover:cursor-pointer hover:shadow-lg select-none">
             <BiFilter className="text-1xl" />
             <p>Filters</p>
