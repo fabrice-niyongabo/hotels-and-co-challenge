@@ -4,6 +4,7 @@ import "@radix-ui/themes/styles.css";
 import "./globals.css";
 import Header from "./components/header";
 import { Theme } from "@radix-ui/themes";
+import ReactQueryProvider from "./components/react-query-provider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,10 +21,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Theme>
-          <Header />
-          {children}
-        </Theme>
+        <ReactQueryProvider>
+          <Theme>
+            <Header />
+            {children}
+          </Theme>
+        </ReactQueryProvider>
       </body>
     </html>
   );

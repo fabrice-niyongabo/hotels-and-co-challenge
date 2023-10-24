@@ -14,6 +14,7 @@ function CategoriesCarousel({ categories }: IProps) {
       itemsToShow={8}
       isRTL={false}
       pagination={false}
+      enableSwipe={false}
       renderArrow={(props) => (
         <div
           // className={`bg-white shadow-md flex items-center justify-center rounded-full h-8 w-8 select-none mt-1 font-semibold hover:shadow-lg hover:cursor-pointer ${
