@@ -38,8 +38,8 @@ function ProductItem({ product }: IProps) {
       }}
     >
       <Carousel responsive={responsive} showDots arrows={showControls}>
-        {product.images.map((item) => (
-          <Link href={`/rooms/${product._id}`}>
+        {product.images.map((item, index) => (
+          <Link href={`/rooms/${product._id}`} key={index}>
             <Image
               src={item.secure_url}
               alt={product.name}

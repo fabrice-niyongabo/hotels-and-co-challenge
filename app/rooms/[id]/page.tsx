@@ -12,6 +12,7 @@ import { AiOutlineHeart } from "react-icons/ai";
 import { CgMenuGridO } from "react-icons/cg";
 import ImagesModal from "./images-modal";
 import HACContainer from "@/app/components/hac-container";
+import Image from "next/image";
 
 const fetchRooms = async (id: string) => {
   const response = await fetch(
@@ -66,7 +67,7 @@ function RoomPage() {
                 className="hover:cursor-pointer hover:opacity-90"
                 onClick={() => setShowModal(true)}
               >
-                <img
+                <Image
                   src={data.images[0].secure_url}
                   alt={data.name}
                   className="rounded-2xl h-auto md:h-96 w-full"
@@ -80,7 +81,7 @@ function RoomPage() {
                     className="hover:cursor-pointer hover:opacity-90"
                     onClick={() => setShowModal(true)}
                   >
-                    <img
+                    <Image
                       src={img.secure_url}
                       alt={data.name}
                       className="w-full h-auto md:h-44"
