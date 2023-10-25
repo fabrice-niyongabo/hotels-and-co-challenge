@@ -5,6 +5,8 @@ import { useInfiniteQuery } from "@tanstack/react-query";
 import { useSearchParams } from "next/navigation";
 import Loader from "./loader";
 import ProductItem from "./product-item";
+import { Callout } from "@radix-ui/themes";
+import { BsExclamationTriangleFill } from "react-icons/bs";
 
 // const fetchProducts = async (slug: string | null) => {
 const fetchProducts = async (slug: string | null, page: number) => {
@@ -58,11 +60,23 @@ function HomeProducts() {
   });
 
   if (isError) {
-    return <div>Error loading data</div>;
+    return (
+      <div className="py-5">
+        <Callout.Root color="red">
+          <Callout.Icon>
+            <BsExclamationTriangleFill />
+          </Callout.Icon>
+          <Callout.Text>
+            Something went wrong while fetching properties. Please try again
+            later
+          </Callout.Text>
+        </Callout.Root>
+      </div>
+    );
   }
 
   return (
-    <div className="pt-5">
+    <div className="pt-5 pb-pb-32">
       {isLoading && <Loader />}
       {data?.pages && (
         <div className="grid  grid-cols-1 lg:grid-cols-4 gap-4">

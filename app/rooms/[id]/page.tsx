@@ -14,6 +14,8 @@ import ImagesModal from "./images-modal";
 import HACContainer from "@/app/components/hac-container";
 import Image from "next/image";
 import { returnImageDimensions } from "@/app/util/returnImageDimensions";
+import { Callout } from "@radix-ui/themes";
+import { BsExclamationTriangleFill } from "react-icons/bs";
 
 const fetchRooms = async (id: string) => {
   const response = await fetch(
@@ -36,6 +38,24 @@ function RoomPage() {
       return data.product as IProduct;
     },
   });
+
+  if (isError) {
+    return (
+      <HACContainer>
+        <div className="pt-3 pb-32">
+          <Callout.Root color="red">
+            <Callout.Icon>
+              <BsExclamationTriangleFill />
+            </Callout.Icon>
+            <Callout.Text>
+              Something went wrong while fetching property. Please try again
+              later
+            </Callout.Text>
+          </Callout.Root>
+        </div>
+      </HACContainer>
+    );
+  }
 
   return (
     <HACContainer>
