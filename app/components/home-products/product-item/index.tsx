@@ -6,6 +6,7 @@ import { FaStar } from "react-icons/fa";
 import Carousel from "react-multi-carousel";
 import { BiHeart } from "react-icons/bi";
 import Link from "next/link";
+import Image from "next/image";
 
 interface IProps {
   product: IProduct;
@@ -39,7 +40,7 @@ function ProductItem({ product }: IProps) {
       <Carousel responsive={responsive} showDots arrows={showControls}>
         {product.images.map((item) => (
           <Link href={`/rooms/${product._id}`}>
-            <img
+            <Image
               src={item.secure_url}
               alt={product.name}
               className="w-full h-60 md:h-64 rounded-xl"

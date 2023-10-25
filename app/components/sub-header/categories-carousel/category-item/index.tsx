@@ -4,6 +4,7 @@ import { ICategory } from "@/app/types";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import React from "react";
+import Image from "next/image";
 
 interface IProps {
   category: ICategory;
@@ -23,7 +24,7 @@ function CategoryItem({ category, categoryIndex }: IProps) {
             : "opacity-60"
         }`}
       >
-        <img
+        <Image
           src={category.image.secure_url}
           alt={category.name}
           height={24}

@@ -3,6 +3,7 @@ import React from "react";
 import { IoIosArrowBack } from "react-icons/io";
 import { GoShare } from "react-icons/go";
 import { AiOutlineHeart } from "react-icons/ai";
+import Image from "next/image";
 
 interface Iprops {
   product: IProduct;
@@ -39,7 +40,7 @@ function ImagesModal({ product, showModal, setShowModal }: Iprops) {
           <div className="py-16">
             {product.images.map((image, index) => (
               <div className="w-full md:w-1/2  mx-auto mb-3" key={index}>
-                <img
+                <Image
                   src={image.secure_url}
                   alt=""
                   className="max-w-full rounded-md"

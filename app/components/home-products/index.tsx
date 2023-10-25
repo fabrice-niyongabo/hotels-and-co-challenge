@@ -1,7 +1,7 @@
 "use client";
 
 import { IProduct } from "@/app/types";
-import { useInfiniteQuery, useQuery } from "@tanstack/react-query";
+import { useInfiniteQuery } from "@tanstack/react-query";
 import { useSearchParams } from "next/navigation";
 import Loader from "./loader";
 import ProductItem from "./product-item";
