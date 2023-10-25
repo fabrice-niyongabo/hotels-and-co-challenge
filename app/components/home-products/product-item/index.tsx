@@ -1,4 +1,6 @@
 "use client";
+
+import { useState } from "react";
 import { IProduct } from "@/app/types";
 import { FaStar } from "react-icons/fa";
 import Carousel from "react-multi-carousel";
@@ -9,6 +11,7 @@ interface IProps {
   product: IProduct;
 }
 function ProductItem({ product }: IProps) {
+  const [showControls, setShowControls] = useState(false);
   const responsive = {
     desktop: {
       breakpoint: { max: 3000, min: 1024 },
@@ -24,8 +27,16 @@ function ProductItem({ product }: IProps) {
     },
   };
   return (
-    <div className="relative">
-      <Carousel responsive={responsive} showDots>
+    <div
+      className="relative"
+      onMouseOver={() => {
+        setShowControls(true);
+      }}
+      onMouseLeave={() => {
+        setShowControls(false);
+      }}
+    >
+      <Carousel responsive={responsive} showDots arrows={showControls}>
         {product.images.map((item) => (
           <Link href={`/rooms/${product._id}`}>
             <img
