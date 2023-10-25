@@ -50,11 +50,11 @@ function RoomPage() {
               <p className="underline">{data.address}</p>
             </div>
             <div className="flex align-center justify-between gap-4">
-              <div className="flex justify-center items-center gap-1">
-                <GoShare /> <p>Share</p>
+              <div className="flex justify-center underline items-center gap-1 hover:cursor-pointer hover:text-red-500">
+                <GoShare /> <p className="text-sm font-medium">Share</p>
               </div>
-              <div className="flex justify-center items-center gap-1">
-                <AiOutlineHeart /> <p>Save</p>
+              <div className="flex justify-center underline items-center gap-1 hover:cursor-pointer hover:text-red-500">
+                <AiOutlineHeart /> <p className="text-sm font-medium">Save</p>
               </div>
             </div>
           </div>
