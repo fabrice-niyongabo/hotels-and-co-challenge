@@ -59,7 +59,10 @@ function RoomPage() {
             </div>
           </div>
           <div className="grid  grid-cols-2 gap-4 mt-5">
-            <div>
+            <div
+              className="hover:cursor-pointer hover:opacity-90"
+              onClick={() => setShowModal(true)}
+            >
               <img
                 src={data.images[0].secure_url}
                 alt={data.name}
@@ -69,7 +72,11 @@ function RoomPage() {
             <div className="grid  grid-cols-2 gap-4 relative">
               {/* four images section */}
               {data.images.slice(1, 5).map((img, index) => (
-                <div key={index} className="bg-red">
+                <div
+                  key={index}
+                  className="hover:cursor-pointer hover:opacity-90"
+                  onClick={() => setShowModal(true)}
+                >
                   <img
                     src={img.secure_url}
                     alt={data.name}
