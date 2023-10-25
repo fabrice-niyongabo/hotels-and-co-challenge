@@ -28,7 +28,7 @@ function ProductItem({ product }: IProps) {
   };
   return (
     <div
-      className="relative"
+      className="relative mb-3 md:mb-0"
       onMouseOver={() => {
         setShowControls(true);
       }}
@@ -42,7 +42,7 @@ function ProductItem({ product }: IProps) {
             <img
               src={item.secure_url}
               alt={product.name}
-              className="w-full h-64 rounded-xl"
+              className="w-full h-auto md:h-64 rounded-xl"
             />
           </Link>
         ))}
