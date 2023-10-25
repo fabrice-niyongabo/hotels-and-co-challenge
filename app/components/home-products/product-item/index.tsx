@@ -42,7 +42,7 @@ function ProductItem({ product }: IProps) {
             <img
               src={item.secure_url}
               alt={product.name}
-              className="w-full h-auto md:h-64 rounded-xl"
+              className="w-full h-60 md:h-64 rounded-xl"
             />
           </Link>
         ))}

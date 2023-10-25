@@ -4,7 +4,7 @@ import Skeleton from "react-loading-skeleton";
 function Loader() {
   const loaderData = new Array(10).fill("Placeholder");
   return (
-    <div className="grid  grid-cols-2 lg:grid-cols-4 gap-4">
+    <div className="grid  grid-cols-1 md:grid-cols-4 gap-4">
       {loaderData.map((item, index) => (
         <div key={index}>
           <Skeleton className="h-44" />

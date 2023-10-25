@@ -4,13 +4,14 @@ import React from "react";
 import Carousel from "@itseasy21/react-elastic-carousel";
 import "react-loading-skeleton/dist/skeleton.css";
 import Skeleton from "react-loading-skeleton";
+import { isMobile } from "react-device-detect";
 
 function Loader() {
   const loaderData: string[] = new Array(10).fill("placeholder");
   return (
     <div>
       <Carousel
-        itemsToShow={8}
+        itemsToShow={isMobile ? 3 : 8}
         isRTL={false}
         pagination={false}
         enableSwipe={false}
