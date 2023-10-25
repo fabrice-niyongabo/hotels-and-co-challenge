@@ -71,6 +71,22 @@ function RoomPage() {
                 <Image
                   src={data.images[0].secure_url}
                   alt={data.name}
+                  width={
+                    data.images[0].width !== 0
+                      ? data.images[0].width
+                      : returnImageDimensions(
+                          data.images[0].secure_url,
+                          "width"
+                        )
+                  }
+                  height={
+                    data.images[0].height !== 0
+                      ? data.images[0].height
+                      : returnImageDimensions(
+                          data.images[0].secure_url,
+                          "height"
+                        )
+                  }
                   className="rounded-2xl h-auto md:h-96 w-full"
                 />
               </div>

@@ -12,11 +12,12 @@ function Header() {
     <nav className=" py-5 border-b-2">
       <HACContainer>
         <div className="flex justify-between items-center">
-          <div>
-            <Link href={"/"}>
+          <Link href={"/"}>
+            <div className="flex items-center justify-center">
               <FaAtlassian className="text-2xl" />
-            </Link>
-          </div>
+              <p className="text-2xl m-0 p-0 pl-2">Hotels&Co</p>
+            </div>
+          </Link>
 
           <DropdownMenu.Root>
             <DropdownMenu.Trigger asChild>
