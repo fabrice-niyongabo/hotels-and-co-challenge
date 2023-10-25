@@ -5,11 +5,12 @@ import { FaAtlassian, FaUserCircle } from "react-icons/fa";
 import { AiOutlineMenu } from "react-icons/ai";
 import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
 import Link from "next/link";
+import HACContainer from "../hac-container";
 
 function Header() {
   return (
     <nav className=" py-5 border-b-2">
-      <div className="container  mx-auto">
+      <HACContainer>
         <div className="flex justify-between items-center">
           <div>
             <Link href={"/"}>
@@ -50,7 +51,7 @@ function Header() {
             </DropdownMenu.Portal>
           </DropdownMenu.Root>
         </div>
-      </div>
+      </HACContainer>
     </nav>
   );
 }
