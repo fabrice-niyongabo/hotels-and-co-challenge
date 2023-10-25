@@ -37,3 +37,6 @@ My strategy involves the following steps:
 ## Deployed version of the app
 
 Click the following to see the app in action: https://hotels-and-co.vercel.app/
+
+## NB
+Because the API server from which I fetched the data for this app is deployed on a free tier when you run the application for the first time, it will take some time for the API server to respond back with the data, Please just wait for 1 up to 5 minutes and after that, the API server will work as normal.
