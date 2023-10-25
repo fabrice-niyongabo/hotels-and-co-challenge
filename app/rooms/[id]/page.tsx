@@ -13,6 +13,7 @@ import { CgMenuGridO } from "react-icons/cg";
 import ImagesModal from "./images-modal";
 import HACContainer from "@/app/components/hac-container";
 import Image from "next/image";
+import { returnImageDimensions } from "@/app/util/returnImageDimensions";
 
 const fetchRooms = async (id: string) => {
   const response = await fetch(
@@ -84,6 +85,16 @@ function RoomPage() {
                     <Image
                       src={img.secure_url}
                       alt={data.name}
+                      width={
+                        img.width !== 0
+                          ? img.width
+                          : returnImageDimensions(img.secure_url, "width")
+                      }
+                      height={
+                        img.height !== 0
+                          ? img.height
+                          : returnImageDimensions(img.secure_url, "height")
+                      }
                       className="w-full h-auto md:h-44"
                     />
                   </div>

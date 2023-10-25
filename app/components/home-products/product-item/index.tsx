@@ -7,6 +7,7 @@ import Carousel from "react-multi-carousel";
 import { BiHeart } from "react-icons/bi";
 import Link from "next/link";
 import Image from "next/image";
+import { returnImageDimensions } from "@/app/util/returnImageDimensions";
 
 interface IProps {
   product: IProduct;
@@ -43,6 +44,16 @@ function ProductItem({ product }: IProps) {
             <Image
               src={item.secure_url}
               alt={product.name}
+              width={
+                item.width !== 0
+                  ? item.width
+                  : returnImageDimensions(item.secure_url, "width")
+              }
+              height={
+                item.height !== 0
+                  ? item.height
+                  : returnImageDimensions(item.secure_url, "height")
+              }
               className="w-full h-60 md:h-64 rounded-xl"
             />
           </Link>

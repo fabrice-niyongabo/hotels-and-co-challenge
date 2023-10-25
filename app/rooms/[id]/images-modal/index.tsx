@@ -4,6 +4,7 @@ import { IoIosArrowBack } from "react-icons/io";
 import { GoShare } from "react-icons/go";
 import { AiOutlineHeart } from "react-icons/ai";
 import Image from "next/image";
+import { returnImageDimensions } from "@/app/util/returnImageDimensions";
 
 interface Iprops {
   product: IProduct;
@@ -44,6 +45,16 @@ function ImagesModal({ product, showModal, setShowModal }: Iprops) {
                   src={image.secure_url}
                   alt=""
                   className="max-w-full rounded-md"
+                  width={
+                    image.width !== 0
+                      ? image.width
+                      : returnImageDimensions(image.secure_url, "width")
+                  }
+                  height={
+                    image.height !== 0
+                      ? image.height
+                      : returnImageDimensions(image.secure_url, "height")
+                  }
                 />
               </div>
             ))}
