@@ -36,4 +36,4 @@ My strategy involves the following steps:
 
 ## Deployed version of the app
 
-(click here to see the app in action)[https://hotels-and-co.vercel.app/]
+Click the following to see the app in action: https://hotels-and-co.vercel.app/
