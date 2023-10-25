@@ -19,10 +19,10 @@ function ImagesModal({ product, showModal, setShowModal }: Iprops) {
     >
       {/* {showModal && ( */}
       <div className="p-5">
-        <div className="flex items-center justify-between p-3">
+        <div className="flex items-center justify-between py-3 md:p-3">
           <div
             onClick={() => setShowModal(false)}
-            className="p-1 hover:bg-gray-300 hover:rounded-full  hover:cursor-pointer transition-all duration-300"
+            className="p-1 bg-gray-300 rounded-full md:bg-transparent md:hover:bg-gray-300 hover:cursor-pointer transition-all duration-300"
           >
             <IoIosArrowBack className="text-2xl" />
           </div>
@@ -38,8 +38,12 @@ function ImagesModal({ product, showModal, setShowModal }: Iprops) {
         <div className="w-full overflow-y-auto h-screen">
           <div className="py-16">
             {product.images.map((image, index) => (
-              <div className="w-1/2 mx-auto mb-3" key={index}>
-                <img src={image.secure_url} alt="" className="max-w-full" />
+              <div className="w-full md:w-1/2  mx-auto mb-3" key={index}>
+                <img
+                  src={image.secure_url}
+                  alt=""
+                  className="max-w-full rounded-md"
+                />
               </div>
             ))}
           </div>

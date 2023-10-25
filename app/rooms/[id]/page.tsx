@@ -37,17 +37,19 @@ function RoomPage() {
 
   return (
     <HACContainer>
-      <div className="pt-3">
+      <div className="pt-3 pb-5">
         {isLoading && <Loader />}
         {data && (
           <>
-            <h2 className="text-3xl">{data.name}</h2>
+            <h2 className="text-xl font-semibold md:text-3xl md:font-normal">
+              {data.name}
+            </h2>
             <div className="flex align-center justify-between mt-1">
-              <div className="flex align-center justify-between">
-                <div className="flex justify-center items-center">
+              <div className="flex align-center justify-between gap-2">
+                <div className="hidden md:visible md:flex md:justify-center md:items-center gap-1">
                   <FaStar /> <p>{data.ratings}</p>
                 </div>
-                <div className="px-2">.</div>
+                <div className="hidden md:visible md:px-2">.</div>
                 <p className="underline">{data.address}</p>
               </div>
               <div className="flex align-center justify-between gap-4">
@@ -59,7 +61,7 @@ function RoomPage() {
                 </div>
               </div>
             </div>
-            <div className="grid  grid-cols-2 gap-4 mt-5">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-5">
               <div
                 className="hover:cursor-pointer hover:opacity-90"
                 onClick={() => setShowModal(true)}
@@ -67,7 +69,7 @@ function RoomPage() {
                 <img
                   src={data.images[0].secure_url}
                   alt={data.name}
-                  className="rounded-2xl h-96 w-full"
+                  className="rounded-2xl h-auto md:h-96 w-full"
                 />
               </div>
               <div className="grid  grid-cols-2 gap-4 relative">
@@ -81,12 +83,12 @@ function RoomPage() {
                     <img
                       src={img.secure_url}
                       alt={data.name}
-                      className="w-full h-44"
+                      className="w-full h-auto md:h-44"
                     />
                   </div>
                 ))}
 
-                <div className="absolute bottom-5 right-5">
+                <div className="absolute bottom-5 right-2 md:right-5">
                   <button
                     className="bg-white py-1 px-3 rounded-md flex items-center justify-center"
                     style={{ border: "1px solid #000" }}
@@ -97,8 +99,11 @@ function RoomPage() {
                 </div>
               </div>
             </div>
-            <div className="grid  grid-cols-2 gap-4 mt-5">
+            <div className="grid  grid-cols-1 md:grid-cols-2 gap-4 mt-5">
               <div>
+                <div className="visible flex justify-start items-center gap-2 md:hidden ">
+                  <FaStar /> <p>{data.ratings}</p>
+                </div>
                 <div className="border-b-2 pb-2">
                   <h3 className="text-2xl">{data.category.name}</h3>
                   <p>{data.description}</p>
