@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import { IProduct } from "@/app/types";
 import { Container } from "@radix-ui/themes";
 import { useQuery } from "@tanstack/react-query";
@@ -10,6 +11,7 @@ import { FaStar } from "react-icons/fa";
 import { GoShare } from "react-icons/go";
 import { AiOutlineHeart } from "react-icons/ai";
 import { CgMenuGridO } from "react-icons/cg";
+import ImagesModal from "./images-modal";
 
 const fetchRooms = async (id: string) => {
   const response = await fetch(
@@ -24,6 +26,7 @@ const fetchRooms = async (id: string) => {
 
 function RoomPage() {
   const { id } = useParams();
+  const [showModal, setShowModal] = useState(false);
   const { isError, isLoading, data } = useQuery({
     queryKey: ["singleproduct", id],
     queryFn: async (): Promise<IProduct> => {
@@ -79,6 +82,7 @@ function RoomPage() {
                 <button
                   className="bg-white py-1 px-3 rounded-md flex items-center justify-center"
                   style={{ border: "1px solid #000" }}
+                  onClick={() => setShowModal(true)}
                 >
                   <CgMenuGridO /> <p className="pl-2 m-0">show all photos</p>
                 </button>
@@ -93,6 +97,11 @@ function RoomPage() {
               </div>
             </div>
           </div>
+          <ImagesModal
+            product={data}
+            setShowModal={setShowModal}
+            showModal={showModal}
+          />
         </>
       )}
     </Container>
