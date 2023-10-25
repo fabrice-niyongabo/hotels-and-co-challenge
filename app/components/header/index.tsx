@@ -4,6 +4,7 @@ import React from "react";
 import { FaAtlassian, FaUserCircle } from "react-icons/fa";
 import { AiOutlineMenu } from "react-icons/ai";
 import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
+import Link from "next/link";
 
 function Header() {
   return (
@@ -11,7 +12,9 @@ function Header() {
       <div className="container  mx-auto">
         <div className="flex justify-between items-center">
           <div>
-            <FaAtlassian className="text-2xl" />
+            <Link href={"/"}>
+              <FaAtlassian className="text-2xl" />
+            </Link>
           </div>
 
           <DropdownMenu.Root>

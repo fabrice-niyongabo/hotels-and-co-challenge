@@ -1,7 +1,102 @@
+"use client";
+
+import { IProduct } from "@/app/types";
+import { Container } from "@radix-ui/themes";
+import { useQuery } from "@tanstack/react-query";
+import { useParams } from "next/navigation";
 import React from "react";
+import Loader from "./loader";
+import { FaStar } from "react-icons/fa";
+import { GoShare } from "react-icons/go";
+import { AiOutlineHeart } from "react-icons/ai";
+import { CgMenuGridO } from "react-icons/cg";
+
+const fetchRooms = async (id: string) => {
+  const response = await fetch(
+    "https://airbnb-dgyy.onrender.com/api/products/" + id
+  );
+  if (!response.ok) {
+    throw new Error("Something went wrong while fetching the products");
+  }
+  const data = await response.json();
+  return data;
+};
 
 function RoomPage() {
-  return <div>RoomPage</div>;
+  const { id } = useParams();
+  const { isError, isLoading, data } = useQuery({
+    queryKey: ["singleproduct", id],
+    queryFn: async (): Promise<IProduct> => {
+      const data = await fetchRooms(id as string);
+      return data.product as IProduct;
+    },
+  });
+
+  return (
+    <Container className="pt-3">
+      {isLoading && <Loader />}
+      {data && (
+        <>
+          <h2 className="text-3xl">{data.name}</h2>
+          <div className="flex align-center justify-between mt-1">
+            <div className="flex align-center justify-between">
+              <div className="flex justify-center items-center">
+                <FaStar /> <p>{data.ratings}</p>
+              </div>
+              <div className="px-2">.</div>
+              <p className="underline">{data.address}</p>
+            </div>
+            <div className="flex align-center justify-between gap-4">
+              <div className="flex justify-center items-center gap-1">
+                <GoShare /> <p>Share</p>
+              </div>
+              <div className="flex justify-center items-center gap-1">
+                <AiOutlineHeart /> <p>Save</p>
+              </div>
+            </div>
+          </div>
+          <div className="grid  grid-cols-2 gap-4 mt-5">
+            <div>
+              <img
+                src={data.images[0].secure_url}
+                alt={data.name}
+                className="rounded-2xl h-96 w-full"
+              />
+            </div>
+            <div className="grid  grid-cols-2 gap-4 relative">
+              {/* four images section */}
+              {data.images.slice(1, 5).map((img, index) => (
+                <div key={index} className="bg-red">
+                  <img
+                    src={img.secure_url}
+                    alt={data.name}
+                    className="w-full h-44"
+                  />
+                </div>
+              ))}
+
+              <div className="absolute bottom-5 right-5">
+                <button
+                  className="bg-white py-1 px-3 rounded-md flex items-center justify-center"
+                  style={{ border: "1px solid #000" }}
+                >
+                  <CgMenuGridO /> <p className="pl-2 m-0">show all photos</p>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div className="grid  grid-cols-2 gap-4 mt-5">
+            <div>
+              <div className="border-b-2 pb-2">
+                <h3 className="text-2xl">{data.category.name}</h3>
+                <p>{data.description}</p>
+              </div>
+            </div>
+          </div>
+        </>
+      )}
+    </Container>
+  );
 }
 
 export default RoomPage;

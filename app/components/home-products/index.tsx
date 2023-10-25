@@ -3,7 +3,6 @@
 import { IProduct } from "@/app/types";
 import { useQuery } from "@tanstack/react-query";
 import { useSearchParams } from "next/navigation";
-import React, { useState } from "react";
 import Loader from "./loader";
 import ProductItem from "./product-item";
 

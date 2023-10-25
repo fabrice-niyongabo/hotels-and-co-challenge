@@ -3,7 +3,6 @@ import { IProduct } from "@/app/types";
 import { FaStar } from "react-icons/fa";
 import Carousel from "react-multi-carousel";
 import { BiHeart } from "react-icons/bi";
-import { Button } from "@radix-ui/themes";
 import Link from "next/link";
 
 interface IProps {
