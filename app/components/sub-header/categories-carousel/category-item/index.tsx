@@ -15,12 +15,12 @@ function CategoryItem({ category, categoryIndex }: IProps) {
   return (
     <Link href={`/?cat=${category.slug}`}>
       <div
-        className={`flex items-center flex-col justify-center opacity-60 pb-2 hover:cursor-pointer hover:opacity-100 hover:border-b-2 hover:border-b-slate-400 ${
+        className={`flex items-center flex-col justify-center  pb-2 hover:cursor-pointer hover:opacity-100 hover:border-b-2 ${
           categorySlug === null && categoryIndex === 0
             ? "border-b-2 border-b-black opacity-100  font-medium"
             : categorySlug === category.slug
             ? "border-b-2 border-b-black opacity-100 font-medium"
-            : ""
+            : "opacity-60"
         }`}
       >
         <img

@@ -4,6 +4,7 @@ import React from "react";
 import Carousel from "@itseasy21/react-elastic-carousel";
 import CategoryItem from "./category-item";
 import { MdNavigateNext, MdNavigateBefore } from "react-icons/md";
+import { isMobile } from "react-device-detect";
 
 interface IProps {
   categories: ICategory[];
@@ -11,10 +12,11 @@ interface IProps {
 function CategoriesCarousel({ categories }: IProps) {
   return (
     <Carousel
-      itemsToShow={8}
+      itemsToShow={isMobile ? 4 : 9}
       isRTL={false}
       pagination={false}
-      enableSwipe={false}
+      enableSwipe={isMobile ? true : false}
+      showArrows={isMobile ? false : true}
       renderArrow={(props) => (
         <div
           // className={`bg-white shadow-md flex items-center justify-center rounded-full h-8 w-8 select-none mt-1 font-semibold hover:shadow-lg hover:cursor-pointer ${

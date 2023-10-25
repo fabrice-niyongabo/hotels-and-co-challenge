@@ -34,7 +34,7 @@ function SubHeader() {
       {data && (
         <div className="flex justify-between items-center">
           <CategoriesCarousel categories={data} />
-          <div className="ml-5 flex items-center justify-between gap-5 border-gray-200 border   py-2 px-5 rounded-lg hover:cursor-pointer hover:shadow-lg select-none">
+          <div className="hidden md:visible md:ml-5 md:flex md:items-center md:justify-between md:gap-5 md:border-gray-200 md:border md:py-2 md:px-5 md:rounded-lg md:hover:cursor-pointer md:hover:shadow-lg md:select-none">
             <BiFilter className="text-1xl" />
             <p>Filters</p>
           </div>
