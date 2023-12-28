@@ -42,8 +42,8 @@ Click the following to see the app in action: https://hotels-and-co.vercel.app/
 Because the API server from which I fetched the data for this app is deployed on a free tier when you run the application for the first time, it will take some time for the API server to respond back with the data, Please just wait for 1 up to 5 minutes and after that, the API server will work as normal.
 
 ## Screenshoots
-![Output 1](https://github.com/fabrice-niyongabo/hotels-and-co-challenge/blob/master/src/screenshoots/1.png)
-![Output 2](https://github.com/fabrice-niyongabo/hotels-and-co-challenge/blob/master/src/screenshoots/2.png)
-![Output 3](https://github.com/fabrice-niyongabo/hotels-and-co-challenge/blob/master/src/screenshoots/3.png)
-![Output 4](https://github.com/fabrice-niyongabo/hotels-and-co-challenge/blob/master/src/screenshoots/4.png)
-![Output 5](https://github.com/fabrice-niyongabo/hotels-and-co-challenge/blob/master/src/screenshoots/6.png)
+![Screenshoot 1](https://github.com/fabrice-niyongabo/hotels-and-co-challenge/blob/master/screenshoots/1.png)
+![Screenshoot 2](https://github.com/fabrice-niyongabo/hotels-and-co-challenge/blob/master/screenshoots/2.png)
+![Screenshoot 3](https://github.com/fabrice-niyongabo/hotels-and-co-challenge/blob/master/screenshoots/3.png)
+![Screenshoot 4](https://github.com/fabrice-niyongabo/hotels-and-co-challenge/blob/master/screenshoots/4.png)
+![Screenshoot 5](https://github.com/fabrice-niyongabo/hotels-and-co-challenge/blob/master/screenshoots/6.png)
